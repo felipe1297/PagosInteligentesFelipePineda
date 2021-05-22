@@ -1,0 +1,48 @@
+﻿@model List<PruebaTecnica.Models.Persona>
+
+@{
+    ViewBag.Title = "Personas";
+}
+
+
+<h2>@ViewBag.Title</h2>
+<div style="text-align:right">
+    <a href="~/Persona/Export" class="btn btn-warning">Exportar</a>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Identificacion</th>
+                <th>Celular</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Correo</th>
+            </tr>
+            @foreach (var oElement in Model)
+            {
+                <tr>
+                    <td>@oElement.IdPersona</td>
+                    <td>@oElement.NombresPersona</td>
+                    <td>@oElement.NombresPersona</td>
+                    <td>@oElement.ApellidosPersona</td>
+                    <td>@oElement.IdentificacionPersona</td>
+                    <td>@oElement.CelularPersona</td>
+                    <td>@oElement.DireccionPersona</td>
+                    <td>@oElement.CiudadPersona</td>
+                    <td>@oElement.CorreoPersona</td>
+                    <td>
+                        <a class="btn btn-primary" href="~/Persona/Editar/@oElement.IdPersona">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="~/Persona/Eliminar/@oElement.IdPersona">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

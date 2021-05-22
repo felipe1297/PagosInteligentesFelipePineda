@@ -1,0 +1,36 @@
+﻿@model PruebaTecnica.Models.Persona;
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar", "Persona", FormMethod.Post))
+{
+   <div class="row">
+       <div class=" = " col-md-12>
+           @Html.HiddenFor(d => d.IdPersona)
+           <div>
+               @Html.LabelFor(d => d.CelularPersona)
+               @Html.TextBoxFor(d => d.CelularPersona, "", new { @class = "form-control" })
+               @Html.ValidationMessageFor(d => d.CelularPersona, null, new { @class = "blue" })
+           </div>
+           <div>
+               @Html.LabelFor(d => d.DireccionPersona)
+               @Html.TextBoxFor(d => d.DireccionPersona, "", new { @class = "form-control" })
+               @Html.ValidationMessageFor(d => d.DireccionPersona, null, new { @class = "blue" })
+           </div>
+           <div>
+               @Html.LabelFor(d => d.CiudadPersona)
+               @Html.TextBoxFor(d => d.CiudadPersona, "", new { @class = "form-control" })
+               @Html.ValidationMessageFor(d => d.CiudadPersona, null, new { @class = "blue" })
+           </div>
+           <br />
+           <div style="text-align:right">
+               <input value="Cargar" class="btn btn-primary" type="submit" />
+           </div>
+       </div>
+   </div>
+}

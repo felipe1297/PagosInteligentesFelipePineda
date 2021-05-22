@@ -1,0 +1,20 @@
+﻿@model PruebaTecnica.Models.Persona;
+
+@{
+    ViewBag.Title = "Añadir mediante archivo con extencion .csv";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("AddCsv", "Persona", FormMethod.Post))
+{
+    <div class="row">
+        <label for="path">Direccion (Path) del archivo .csv </label><br />
+        <input type="text" id="path" name="path"  class="form-control"/>
+    </div>
+    <br />
+    <div style="text-align:right">
+        <input value="Cargar" class="btn btn-primary" type="submit" />
+    </div>
+}

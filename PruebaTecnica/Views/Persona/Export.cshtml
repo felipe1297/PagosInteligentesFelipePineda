@@ -1,0 +1,28 @@
+﻿@model PruebaTecnica.Models.Persona;
+
+@{
+    ViewBag.Title = "Exportar a .xlsx/.csv";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Export", "Persona", FormMethod.Post))
+{
+    <div class="row">
+        <label for="path">Direccion (Path) donde se desea guardar el archivo (ex: C:\Users\MyUser\Desktop) </label><br />
+        <input type="text" id="path" name="path" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label for="typeOfFile">Elegir tipo de archivo</label>
+        <select name="typeOfFile" id="typeOfFile">
+            <option value="csv">.csv</option>
+            <option value="xlsx">.xlsx</option>
+        </select>
+    </div>
+    <br />
+    <div style="text-align:right">
+        <input value="Exportar" class="btn btn-primary" type="submit" />
+    </div>
+}
